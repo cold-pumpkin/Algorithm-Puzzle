@@ -8,7 +8,7 @@
 */
 
 
-/** Sol 1. 재귀함수 + Memoization **/
+// Sol 2. 재귀함수 + Memoization 
                 // * Memoization : 한 번 구한 결과를 저장하여 재사용 
 var M = 10;
 var N = 100;

@@ -13,17 +13,18 @@
 var M = 10;
 var N = 100;
 
-// (남은 사람 수, 이전 테이블에 배치한 사람 수)
+// 트리 (노드의 값, 엣지의 값)을 매개변수로 세팅
+// => (남은 사람 수, 이전 테이블에 배치한 사람 수)
 function check(remain, pre) {
     // 더 이상 배치할 사람이 없으면 종료
     if (remain < 0)
         return 0;
-    else if (remain == 0)
+    else if (remain == 0)   // 남은 사람이 0인 경우 : 유효한 경우
         return 1;
     
     var cnt = 0;
     // 테이블에 배치할 사람 수(pre ~ M) 만큼 반복
-    for(var i = pre; i <= M; i++) 
+    for(var i = pre; i <= M; i++) // 패턴이 겹치지 않도록 이전에 앉은 사람보다 많은 사람이 앉는 경우 고려
         cnt += check(remain - i, i);
     
     return cnt;
